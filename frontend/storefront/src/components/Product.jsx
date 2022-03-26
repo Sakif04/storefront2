@@ -4,18 +4,18 @@ export default function Product({prodItem}){
     const cardStyle = {
         display: 'block',
         padding:'0.5rem',
-        fontSize:"0.5rem",
+        fontSize:"5px",
         width: '100px',
         transitionDuration: '0.3s',
         height: '25vh'
     }
+    
     const headerStyle={
         color:"#0E747E", 
         fontSize:"10px",
     }
 
     return(<Card style={cardStyle} >
-        
         <Typography style={headerStyle} >{
             prodItem.id
         }
@@ -32,7 +32,6 @@ export default function Product({prodItem}){
             prodItem.price_with_tax
         }</p>
         </Card>
-
 
     )
 }

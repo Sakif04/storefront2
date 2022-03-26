@@ -16,17 +16,15 @@ export default function App() {
     return ;
   }).finally(()=>{})
 }
-   
-compone
-  useEffect(()=>
-    fetchProducts()
+    useEffect(()=>
+    fetchProducts(),[products]
    )
     
 
   return (
    <div>
  {products?<>
-  <Product prodItem={products[0]}></Product><Product prodItem={products[1]}/>
+  <Product prodItem={products[0]}></Product><Product prodItem={products[1]}/><Product prodItem={products[2]}/><Product prodItem={products[3]}/>
   </>:"not found"}
   </div>)
   }
