@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.sessions',
     'django.contrib.auth',
@@ -47,6 +48,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -93,7 +95,7 @@ DATABASES = {
         'NAME': 'storefront2',
         'HOST': 'localhost',
         'USER': 'root',
-        'PASSWORD': 'password'
+        'PASSWORD': 'nilbilla'
     }
 }
 
@@ -129,6 +131,14 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
+
+CORS_ORIGIN_WHITELIST = (
+
+       'http://localhost:3000',
+
+)
 
 
 # Static files (CSS, JavaScript, Images)
