@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .form{
+        @apply my-10 p-4  mx-auto w-1/4 text-center flex justify-center rounded-lg flex-col bg-slate-400;
+    }
+    .label{
+        @apply text-white;
+    }
+    .input{
+        @apply border-sky-900 border-2 rounded-md m-3 selection:border-0 mb-4
+    }
+    .btn-submit{
+        @apply   bg-sky-800 text-gray-100 py-1 px-2 rounded-md ;
+    }
+
+}
