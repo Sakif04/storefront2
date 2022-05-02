@@ -3,12 +3,27 @@
 @tailwind utilities;
 
 @layer components{
+
+    .nav-bar{
+        @apply w-3/4  bg-amber-500 text-center py-2 mx-auto;
+    }
+    .nav-link{
+        @apply text-slate-800 mx-2 hover:text-amber-100;
+    }
     .form{
-        @apply my-10 p-4  mx-auto w-1/4 text-center flex justify-center rounded-lg flex-col bg-slate-400;
+        @apply my-5 p-4  mx-auto w-2/4 text-center flex justify-center rounded-lg flex-col bg-slate-400;
+    }
+    .form-input{
+        @apply relative;
     }
     .label{
-        @apply text-white;
+        @apply text-gray-900 font-sans text-xl ;
     }
+    .input:focus ~.label,input[type="text"]:not(:placeholder-shown)~.label{
+       transform:translate(-50%,-50%);
+        
+    }
+    
     .input{
         @apply border-sky-900 border-2 rounded-md m-3 selection:border-0 mb-4
     }
