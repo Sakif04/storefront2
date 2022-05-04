@@ -3,7 +3,8 @@ import { useState } from "react";
 
 
 function Registration(props) {
-    const tokenurl='http://127.0.0.1:8000/auth';
+    const tokenurl='http://127.0.0.1:8000';
+    const reg_key='/auth/users/';
     const [formInput,SetInputs]=useState({
         firstname:'',
         lastname:'',
@@ -13,6 +14,7 @@ function Registration(props) {
 
 
     });
+    //input handler
     const handleChange=(e)=>{
         SetInputs(
             {...formInput,
@@ -21,32 +23,40 @@ function Registration(props) {
         )
 
     }
-    const handleSubmit=(e)=>{
+    const  handleSubmit= async (e)=>{
         e.preventDefault();
         const nameInput=e.target.username.value;
         const firstname=e.target.firstname.value;
         const lastname=e.target.lastname.value;
         const passInput=e.target.password.value;
+        const email=e.target.email.value;
         const data={
-            firstname:firstname,
-            lastname:lastname,
-            username:nameInput,
-            email:email,
-            password:passInput
+            "firstname":firstname,
+            "lastname":lastname,
+            "username":nameInput,
+            "email":email,
+            "password":passInput
         }
 
-        axios.post(tokenurl,)
-        SetInputs(
-            {   firstname:'',
-                lastname:'',
-                email:'',
-                username:'',
-                password:'',
+        const isReg=await axios.post(tokenurl+reg_key,data,{
+            headers:{
+              Accept:"application/json;",
+              'Content-Type':'application/json;charset=UTF-8'
             }
-        )
+          }).then(s=>console.log(s));
         
-        
+        // isReg?SetInputs(
+        //     {   firstname:'',
+        //         lastname:'',
+        //         email:'',
+        //         username:'',
+        //         password:'',
+        //     }):null; 
     }
+       
+        
+        
+    
   
     return (
     <form  className='form' onSubmit={handleSubmit}>

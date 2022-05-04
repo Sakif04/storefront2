@@ -16,7 +16,7 @@ function App() {
        </nav>
     
        <Routes>
-        <Route path="/" element={<PrivateRoute > <Homepage /></PrivateRoute>} />
+        <Route path="/" element={<PrivateRoute > <Homepage /> </PrivateRoute>} />
         <Route path='/reg' element={<Registration />} />
         <Route element={<LogIn />} path='/login' />
        </Routes>
